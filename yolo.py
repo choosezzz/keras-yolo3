@@ -212,15 +212,23 @@ def detect_video(yolo, video_path, output_path=""):
 
 def detect_img(yolo):
     while True:
-        img = input('Input image filename:')
+        img = input('输入要识别图片路径:')
         try:
+            #打开图片
             image = Image.open(img)
         except:
-            print('Open Error! Try again!')
+            print('图片打开失败，请重试!')
             continue
         else:
             r_image = yolo.detect_image(image)
             r_image.show()
+            #保存
+
+            print(img)
+            m = img.rfind("\\")
+            k = img.rfind("/")
+            index = m if m > k else k
+            r_image.save('C:/Users/dingshuangen/Desktop/yolo3/img-out/'+img[index+1:])
     yolo.close_session()
 
 
