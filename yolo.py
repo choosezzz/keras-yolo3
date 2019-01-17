@@ -235,7 +235,7 @@ def detect_img(yolo):
 
 
 if __name__ == '__main__':
-    # detect_img(YOLO())
-    video_path = input("输入视频地址：")
-    out_path = input("输入识别结果保存地址：")
-    detect_video(YOLO(), video_path, out_path)
+    detect_img(YOLO())
+    # video_path = input("输入视频地址：")
+    # out_path = input("输入识别结果保存地址：")
+    # detect_video(YOLO(), video_path, out_path)
